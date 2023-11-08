@@ -14,3 +14,20 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+
+
+let userId = document.querySelector('.userId'),
+fullname = document.querySelector('.fullname'),
+email = document.querySelector('.email'),
+address = document.querySelector('.address'),
+username = document.querySelector('.username'),
+gender = document.querySelector('select'),
+form = document.querySelector('form'),
+dob = document.querySelector('.dob');
+
+ const create = document.querySelector('#createBtn'),
+ readbtn = document.querySelector('#readBtn'),
+ updateRecord = document.querySelector('#updateBtn'),
+ deletebtn = document.querySelector('#deleteBtn');
+
+ 
