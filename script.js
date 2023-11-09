@@ -94,3 +94,13 @@ const readData = () =>{
             alert("unsuccessful, "+error)
         });
      }
+
+     //deleting new record
+ const deleteData = () => {
+    remove(ref(db, "TheRecord/"+ userId.value)).then(()=>{
+        alert("Record Removed Successfully");
+        form.reset();
+    }).catch((error)=>{
+        alert("unsuccessful, "+error)
+    });
+ }
