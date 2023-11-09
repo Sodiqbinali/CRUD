@@ -56,6 +56,24 @@ dob = document.querySelector('.dob');
         alert("unsuccessful, "+error)
     });
 
+}
 
+//reading exist data
+const readData = () =>{
+    const dbref = ref(db);
 
+    get(child(dbref,"TheRecord/"+ userId.value)).then((snapshot)=>{
+        if(snapshot.exists()){
+            fullname.value = snapshot.val().fullname;
+            username.value = snapshot.val().username;
+            email.value = snapshot.val().email;
+            address.value = snapshot.val().address;
+            gender.value = snapshot.val().gender;
+            dob.value = snapshot.val().dob;
+        } else {
+            alert("No data found");
+        }
+    }).catch((error)=>{
+        alert("unsuccessful, "+error)
+    });
 }
