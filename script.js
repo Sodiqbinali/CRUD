@@ -77,3 +77,20 @@ const readData = () =>{
         alert("unsuccessful, "+error)
     });
 }
+
+     //updating new record
+     const updateData = () => {
+        update(ref(db, "TheRecord/"+ userId.value),{
+            fullname: fullname.value,
+            email: email.value,
+            address: address.value,
+            username: username.value,
+            gender: gender.value,
+            dob: dob.value
+        }).then(()=>{
+            alert("update Stored Successfully");
+            form.reset();
+        }).catch((error)=>{
+            alert("unsuccessful, "+error)
+        });
+     }
