@@ -30,4 +30,32 @@ dob = document.querySelector('.dob');
  updateRecord = document.querySelector('#updateBtn'),
  deletebtn = document.querySelector('#deleteBtn');
 
- 
+  //creating new record
+  const createData = () => {
+    const dbref = ref(db);
+
+    get(child(dbref,"TheRecord/"+ userId.value)).then((snapshot)=>{
+        if(snapshot.exists()){
+            alert("Record with Id already exist");
+        } else {
+            set(ref(db, "TheRecord/"+ userId.value),{
+    fullname: fullname.value,
+    email: email.value,
+    address: address.value,
+    username: username.value,
+    gender: gender.value,
+    dob: dob.value
+}).then(()=>{
+    alert("Record Stored Successfully");
+    form.reset();
+}).catch((error)=>{
+    alert("unsuccessful, "+error)
+});
+        }
+    }).catch((error)=>{
+        alert("unsuccessful, "+error)
+    });
+
+
+
+}
