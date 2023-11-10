@@ -114,3 +114,13 @@ readbtn.addEventListener('click',(e)=>{
     e.preventDefault();
     readData();
 })
+
+updateRecord.addEventListener('click', (e)=>{
+    e.preventDefault();
+    updateData();
+})
+
+deletebtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    deleteData();
+})
