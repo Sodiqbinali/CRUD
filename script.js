@@ -104,3 +104,13 @@ const readData = () =>{
         alert("unsuccessful, "+error)
     });
  }
+
+ create.addEventListener('click', (e)=>{
+    e.preventDefault();
+    createData();
+})
+
+readbtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    readData();
+})
